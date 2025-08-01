@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+
+body {
+    font-size: 18px;
+}
+.container {
+    margin: 10% 5%;
+}
+
+/* --- Mobile First (Default Styles) --- */
+
+.grid-container {
+    display: flex;
+    flex-direction: column; /* เรียงเป็นคอลัมน์เดียวตามภาพ mobile-design.jpg */
+    gap: 40px; /* ระยะห่างระหว่างกล่องใน mobile */
+}
+
+.git-item {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.header {
+    background-color: hsl(256, 67%, 59%);
+    text-align: center;
+    padding: 30px;
+    color: hsl(0, 0%, 100%);
+}
+.header h1 {
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 45px;
+}
+.header span {
+    color: hsl(39, 100%, 71%);
+}
+.header .faster {
+    color: hsl(0, 0%, 100%);
+    font-style: italic;
+}
+.header img {
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.manage {
+    background-color: hsl(0, 0%, 100%);
+    padding: 12px;
+    line-height: 20px;
+    font-weight: 400;
+}
+.manage img {
+    width: 100%;
+    min-height: 63.5px;
+    border-radius: 20px;
+}
+
+.maintain {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: hsl(39, 100%, 71%);
+    padding: 12px 12px 0 12px;
+    line-height: 20px;
+    font-weight: 400;
+}
+.maintain img {
+    width: 60%;
+    margin-top: 20px;
+}
+
+.schedule {
+    background-color: hsl(254, 88%, 90%);
+    padding: 30px 15px;
+    line-height: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+.schedule h2 {
+    font-weight: 500;
+}
+.schedule p {
+    margin: 0 22px;
+}
+.schedule img {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.growth {
+    background-color: hsl(256, 67%, 59%);
+    padding: 30px 40px;
+    color: hsl(0, 0%, 100%);
+    line-height: 30px;
+    text-align: center;
+}
+.growth img {
+    width: 100%;
+}
+
+.audience {
+    background-color: hsl(0, 0%, 100%);
+    padding: 20px;
+}
+.audience h1 {
+    font-size: 3rem;
+}
+.audience p {
+    margin: 0 0 15px 0;
+}
+.audience img {
+    width: 50%;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 40px
+}
+
+.create {
+    background-color: hsl(31, 66%, 93%);
+    line-height: 30px;
+    padding: 25px;
+}
+.create span {
+    color: hsl(256, 67%, 59%);
+    font-style: italic;
+}
+.create img {
+    width: 60%;
+    margin-top: 20px;
+}
+
+.write {
+    background-color: hsl(39, 100%, 71%);
+    line-height: 25px;
+    padding: 25px;
+}
+.write img {
+    width: 70%;
+    margin-top: 20px;
+}
+
+/* --- Desktop Layout (ใช้ Media Query) --- */
+@media (min-width: 992px) {
+
+    .container {
+        margin: 5% auto;
+        max-width: 1440px;
+        padding: 0 5%;
+    }
+
+    .grid-container {
+        display: grid;
+        gap: 20px;
+
+        /* กำหนด 4 คอลัมน์ */
+        grid-template-columns: repeat(4, 1fr);
+
+        /* กำหนดความสูงของ 3 แถวหลัก โดยที่ทุกแถวสูงเท่ากัน */
+        /* ทำให้ create และ write มีความสูงเท่ากันในคอลัมน์แรก */
+        grid-template-rows: 1fr 1fr 1fr;
+
+        /* นี่คือ Grid Area ที่ถูกต้องตามที่คุณต้องการ */
+        grid-template-areas:
+            "box   header   header   schedule"
+            "box   manage   maintain schedule"
+            "box   audience growth   growth";
+    }
+
+    /* กำหนด grid-area ให้กับแต่ละ box */
+    .header       { grid-area: header; }
+    .manage       { grid-area: manage; }
+    .maintain     { grid-area: maintain; }
+    .schedule     { grid-area: schedule; }
+    .audience     { grid-area: audience; }
+    .growth       { grid-area: growth; }
+    .box          { grid-area: box; }
+
+    .create {
+        height: 100%;
+        font-size: 2rem;
+        line-height: 50px;
+        img {
+            margin-top: 30px;
+        }
+    }
+    .write {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        font-size: 2rem;
+        line-height: 50px;
+        img {
+            width: 100%;
+        }
+    }
+    .header {
+        align-items: center;
+        padding: 50px;
+    }
+    .header h1 {
+        font-size: 4rem;
+        line-height: 60px;
+    }
+    .manage {
+        overflow: hidden;
+        font-size: 2rem;
+        line-height: 40px;
+    }
+    .manage img {
+        width: 150%;
+    }
+    .audience {
+        h1 {
+            font-size: 4rem;
+        }
+    }
+    .schedule {
+        text-align: center;
+        overflow: hidden;
+    }
+    .schedule p {
+        text-align: start;
+    }
+    .schedule img {
+        width: 170%;
+    }
+    .maintain {
+        padding: 30px 30px 0 30px;
+        font-size: 2rem;
+        line-height: 40px;
+    }
+    .maintain img {
+        width: 100%;
+    }
+    .growth {
+        align-items: center;
+        display: flex;
+        text-align: start;
+    }
+    .growth img {
+        width: 70%;
+        height: 70%;
+    }
+}

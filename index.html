@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Bento grid</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -16,27 +18,52 @@
 </head>
 <body>
 
-  Social Media 10x Faster with AI
-  Over 4,000 5-star reviews
+  <div class="container">
+    <div class="grid-container">
+      <div class="git-item header">
+        <h1>
+          Social Media <span>10x</span> <span class="faster">Faster</span> with AI
+        </h1>
+        <img src="./assets/images/illustration-five-stars.webp" alt="5 star">
+        <p>Over 4,000 5-star reviews</p>
+      </div>
+      <div class="git-item manage">
+        <img src="./assets/images/illustration-multiple-platforms.webp" alt="Social-icon">
+        <h2>Manage multiple accounts and platforms.</h2>
+      </div>
+      <div class="git-item maintain">
+        <h2>
+          Maintain a consistent posting schedule.
+        </h2>
+        <img src="./assets/images/illustration-consistent-schedule.webp" alt="carendar">
+      </div>
+      <div class="git-item schedule">
+        <h2>Schedule to social media.</h2>
+        <img src="./assets/images/illustration-schedule-posts.webp" alt="graph">
+        <p>Optimize post timings to publish content at the perfect time for your audience.</p>
+      </div>
+      <div class="git-item growth">
+        <img src="./assets/images/illustration-grow-followers.webp" alt="graph-follwer">
+        <h1>Grow followers with non-stop content.</h1>
+      </div>
+      <div class="git-item audience">
+        <h1>>56%</h1>
+        <p>faster audience growth</p>
+        <img src="./assets/images/illustration-audience-growth.webp" alt="emoji">
+      </div>
+      <div class="box">
+        <div class="git-item create">
+          <h2>Create and schedule content <span>quicker.</span></h2>
+          <img src="./assets/images/illustration-create-post.webp" alt="Create-Post">
+        </div>
+        <div class="git-item write">
+          <h2>Write your content using AI.</h2>
+          <img src="./assets/images/illustration-ai-content.webp" alt="AI-content">
+        </div>
+      </div>
+    </div>
 
-  Manage multiple accounts and platforms.
-
-  Maintain a consistent posting schedule.
-
-  Schedule to social media.
-  Optimize post timings to publish content at the perfect time for your audience.
-  
-  Grow followers with non-stop content.
-
-  >56% faster audience growth
-  
-  Create and schedule content quicker.
-
-  Write your content using AI.
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
   </div>
+
 </body>
 </html>
